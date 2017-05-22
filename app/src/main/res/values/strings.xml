@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinNote</string>
+    <string name="app_wod">Hello World!</string>
 </resources>
