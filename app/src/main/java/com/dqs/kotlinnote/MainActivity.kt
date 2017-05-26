@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val next = findViewById(R.id.Button02) as Button
         next.setOnClickListener {
             Toast.makeText(this, "测试", Toast.LENGTH_SHORT).show()
-            firstName.setText(sum(4, 5))
+            firstName.text=sum(4, 5)
         }
         firstName.setText(R.string.app_wod)
     }

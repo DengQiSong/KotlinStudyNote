@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    　　
+    <string-array name="entries_list_preference">
+        　　
+        <item>丰台区</item>
+        　　
+        <item>石景山区</item>
+        　　
+        <item>海淀区</item>
+        　　
+        <item>漳州市</item>
+        　　
+        <item>朝阳区</item>
+        　　
+    </string-array>
+    <string-array name="entryvalues_list_preference">
+        　　
+        <item>什么事</item>
+        　　
+        <item>看看再说</item>
+        　　
+    </string-array>
+</resources>
