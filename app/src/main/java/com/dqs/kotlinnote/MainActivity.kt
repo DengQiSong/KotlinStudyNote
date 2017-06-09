@@ -48,7 +48,13 @@ class MainActivity : AppCompatActivity() {
         return (a + b).toString()
     }
 
+    /**getMethod：获取类中的public方法
+    getDeclaredMethod：获取类中的所有方法
+    getField：获取类中的public字段（属性）
+    getDeclaredField：获取类中的所有字段
+     */
     fun _TestNote(): String {
+
         val sb = StringBuffer()
         val cls = TestRuntimeAnnotation::class.java
         sb.append("Class注解：").append("\n")

@@ -13,11 +13,8 @@ import com.dqs.kotlinnote.R
  */
 class RegisterFragment: Fragment() {
     companion object {
-        fun newInstance(fragConent: String): RegisterFragment {
-            val args = Bundle()
-            args.putString("ARGS_NAVI_BTN_NAME", fragConent)
+        fun newInstance(): RegisterFragment {
             val fragment = RegisterFragment()
-            fragment.arguments=args
             return fragment
 
         }
@@ -25,7 +22,9 @@ class RegisterFragment: Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_register, container, false)
         val but = v.findViewById(R.id.button9) as Button
-        but.setOnClickListener { fragmentManager.popBackStack() }
+        but.setOnClickListener {
+            LoginRegistrationActivity.getFragment(this.javaClass.name, LogOnFragment.newInstance().javaClass.name)
+        }
         return v
     }
 }

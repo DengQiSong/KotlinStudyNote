@@ -13,12 +13,9 @@ import kotterknife.bindView
  *作者：Denqs on 2017/5/23.
  */
 class LogOnFragment : Fragment() {
-       companion object {
-        fun newInstance(fragConent: String): LogOnFragment {
-            val args = Bundle()
-            args.putString("ARGS_NAVI_BTN_NAME", fragConent)
+    companion object {
+        fun newInstance(): LogOnFragment {
             val fragment = LogOnFragment()
-            fragment.arguments=args
             return fragment
 
         }
@@ -27,7 +24,7 @@ class LogOnFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_logon, container, false)
         val but = v.findViewById(R.id.button9) as Button
-        but.setOnClickListener { fragmentManager.popBackStack() }
+        but.setOnClickListener { LoginRegistrationActivity.getFragment(this.javaClass.name, SetupFragment.newInstance().javaClass.name) }
         return v
     }
 }

@@ -17,11 +17,8 @@ import java.util.*
  */
 class SetupFragment : Fragment() {
     companion object {
-        fun newInstance(fragConent: String): SetupFragment {
-            val args = Bundle()
-            args.putString("ARGS_NAVI_BTN_NAME", fragConent)
+        fun newInstance(): SetupFragment {
             val fragment = SetupFragment()
-            fragment.arguments = args
             return fragment
 
         }
@@ -42,8 +39,12 @@ class SetupFragment : Fragment() {
         val log = v.findViewById(R.id.logon) as Button
         val register = v.findViewById(R.id.register) as Button
         log.setOnClickListener {
-            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.fragment, LogOnFragment()).commit() }
+            LoginRegistrationActivity.getFragment(this.javaClass.name, LogOnFragment.newInstance().javaClass.name)
+//            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.fragment, LogOnFragment()).commit()
+        }
         register.setOnClickListener {
-            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.fragment, RegisterFragment()).commit() }
+            LoginRegistrationActivity.getFragment(this.javaClass.name, RegisterFragment.newInstance().javaClass.name)
+//            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.fragment, RegisterFragment()).commit()
+        }
     }
 }
