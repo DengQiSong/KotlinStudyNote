@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import com.dqs.kotlinnote.R
+import kotterknife.bindView
 import java.util.*
 
 //登录注册流程
@@ -13,7 +15,6 @@ class LoginRegistrationActivity : AppCompatActivity() {
         var fragments: MutableMap<String, Fragment> = HashMap()
         var Fragment: FragmentManager? = null
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_registration)
@@ -21,13 +22,15 @@ class LoginRegistrationActivity : AppCompatActivity() {
         cont.Fragment = supportFragmentManager
     }
 
+
+
     /**
      * 设置默认显示的fragment
      */
     private fun setDefaultFragment() {
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
-        val fragment = SetupFragment.newInstance()
+        val fragment = LogOnFragment.newInstance()
         cont.fragments.put(fragment.javaClass.name, fragment)
         transaction.add(R.id.fragment, cont.fragments[fragment.javaClass.name])
         transaction.commit()

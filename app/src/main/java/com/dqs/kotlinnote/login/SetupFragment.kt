@@ -1,21 +1,19 @@
 package com.dqs.kotlinnote.login
 
-import android.os.Bundle
-import android.preference.PreferenceFragment
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.support.v7.widget.Toolbar
 import android.widget.Button
-import android.widget.Toast
+import android.widget.TextView
 import com.dqs.kotlinnote.R
-import kotterknife.bindView
-import java.util.*
+import com.dqs.kotlinnote.base.BaseFragment
 
 /**
  *作者：Denqs on 2017/5/23.
  */
-class SetupFragment : Fragment() {
+class SetupFragment : BaseFragment() {
+    override fun layoutRes(): Int {
+        return R.layout.fragment_setup
+    }
+
     companion object {
         fun newInstance(): SetupFragment {
             val fragment = SetupFragment()
@@ -24,27 +22,15 @@ class SetupFragment : Fragment() {
         }
     }
 
-    /*  override fun onCreate(savedInstanceState: Bundle?) {
-          super.onCreate(savedInstanceState)
-          addPreferencesFromResource(R.xml.preferences);
-      }*/
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.fragment_setup, container, false)
-        initView(v)
-        return v
+    override fun onStart() {
+        super.onStart()
     }
 
-    fun initView(v: View) {
-        val log = v.findViewById(R.id.logon) as Button
-        val register = v.findViewById(R.id.register) as Button
-        log.setOnClickListener {
+    override fun initToolBar(toolbar: Toolbar, tv_title: TextView) {
+        super.initToolBar(toolbar, tv_title)
+        tv_title.text="密码找回"
+        toolbar.setNavigationOnClickListener {
             LoginRegistrationActivity.getFragment(this.javaClass.name, LogOnFragment.newInstance().javaClass.name)
-//            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.fragment, LogOnFragment()).commit()
-        }
-        register.setOnClickListener {
-            LoginRegistrationActivity.getFragment(this.javaClass.name, RegisterFragment.newInstance().javaClass.name)
-//            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.fragment, RegisterFragment()).commit()
         }
     }
 }

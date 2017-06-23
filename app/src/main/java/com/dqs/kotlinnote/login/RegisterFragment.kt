@@ -1,17 +1,19 @@
 package com.dqs.kotlinnote.login
 
-import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.support.v7.widget.Toolbar
 import android.widget.Button
+import android.widget.TextView
 import com.dqs.kotlinnote.R
+import com.dqs.kotlinnote.base.BaseFragment
 
 /**
  *作者：Denqs on 2017/5/23.
  */
-class RegisterFragment: Fragment() {
+class RegisterFragment : BaseFragment() {
+    override fun layoutRes(): Int {
+        return R.layout.fragment_register
+    }
+
     companion object {
         fun newInstance(): RegisterFragment {
             val fragment = RegisterFragment()
@@ -19,12 +21,16 @@ class RegisterFragment: Fragment() {
 
         }
     }
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.fragment_register, container, false)
-        val but = v.findViewById(R.id.button9) as Button
-        but.setOnClickListener {
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun initToolBar(toolbar: Toolbar, tv_title: TextView) {
+        super.initToolBar(toolbar, tv_title)
+        tv_title.text="注册"
+        toolbar.setNavigationOnClickListener {
             LoginRegistrationActivity.getFragment(this.javaClass.name, LogOnFragment.newInstance().javaClass.name)
         }
-        return v
     }
 }
