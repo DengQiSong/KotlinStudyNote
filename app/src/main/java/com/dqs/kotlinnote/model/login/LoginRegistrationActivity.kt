@@ -1,12 +1,10 @@
-package com.dqs.kotlinnote.login
+package com.dqs.kotlinnote.model.login
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import com.dqs.kotlinnote.R
-import kotterknife.bindView
 import java.util.*
 
 //登录注册流程

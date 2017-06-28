@@ -1,12 +1,12 @@
-package com.dqs.kotlinnote
+package com.dqs.kotlinnote.model
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import com.dqs.kotlinnote.login.LoginRegistrationActivity
-import com.dqs.kotlinnote.note.*
+import com.dqs.kotlinnote.R
+import com.dqs.kotlinnote.module.note.*
 import kotterknife.bindView
 import java.lang.reflect.Modifier
 import java.util.*

@@ -1,13 +1,13 @@
-package com.dqs.kotlinnote.login
+package com.dqs.kotlinnote.model.login
 
 import android.support.v7.widget.Toolbar
-import android.widget.Button
 import android.widget.TextView
 import com.dqs.kotlinnote.R
-import com.dqs.kotlinnote.base.BaseFragment
+import com.dqs.kotlinnote.app.BaseFragment
 
 /**
  *作者：Denqs on 2017/5/23.
+ * 密码找回
  */
 class SetupFragment : BaseFragment() {
     override fun layoutRes(): Int {

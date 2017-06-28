@@ -1,4 +1,4 @@
-package com.dqs.kotlinnote.note;
+package com.dqs.kotlinnote.module.note;
 
 /**
  * 作者：Denqs on 2017/6/1.

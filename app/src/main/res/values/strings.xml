@@ -7,6 +7,7 @@
     <string name="login_pw">密码</string>
     <string name="login">登 录</string>
     <string name="register">快速注册</string>
+    <string name="register_phone">手机号码</string>
     <string name="register_01">注册</string>
     <string name="forget_password">忘记密码</string>
 </resources>

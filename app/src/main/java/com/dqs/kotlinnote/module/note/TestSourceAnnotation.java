@@ -1,4 +1,4 @@
-package com.dqs.kotlinnote.note;
+package com.dqs.kotlinnote.module.note;
 
 import android.support.annotation.IntDef;
 

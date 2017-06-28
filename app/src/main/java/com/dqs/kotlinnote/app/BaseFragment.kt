@@ -1,4 +1,4 @@
-package com.dqs.kotlinnote.base
+package com.dqs.kotlinnote.app
 
 import android.os.Bundle
 import android.support.annotation.IdRes
@@ -6,10 +6,12 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.dqs.kotlinnote.R
 
 
@@ -42,13 +44,21 @@ abstract class BaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    open fun initToolBar(toolbar: Toolbar,tv_title:TextView) {
+    open fun initToolBar(toolbar: Toolbar, tv_title: TextView) {
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setHomeButtonEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowHomeEnabled(true)
         (activity as AppCompatActivity).supportActionBar!!.setDisplayShowTitleEnabled(false)
         setHasOptionsMenu(true)
+    }
+
+    fun showToast(content: String) {
+        if (activity != null && !activity.isFinishing) {
+            val toast = Toast.makeText(activity.applicationContext, content, Toast.LENGTH_SHORT)
+            toast.setGravity(Gravity.CENTER, 0, 0)
+            toast.show()
+        }
     }
 
     fun <T : View> findView(@IdRes id: Int): T? {

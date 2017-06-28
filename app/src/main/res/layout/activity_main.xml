@@ -25,7 +25,7 @@
             android:id="@+id/Button02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="网络请求" />
+            android:text="kotlin的加法运算" />
 
         <Button
             android:id="@+id/button03"

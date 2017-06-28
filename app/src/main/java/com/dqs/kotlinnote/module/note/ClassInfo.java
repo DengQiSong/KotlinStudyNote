@@ -1,4 +1,4 @@
-package com.dqs.kotlinnote.note;
+package com.dqs.kotlinnote.module.note;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
