@@ -1,3 +1,3 @@
 # KotlinNote
-Kotlin学习项目
- 有空在弄了,一边kotlin一边做现有android项目迭代要疯
+Kotlin学习笔记
+ MVP模式，仿登陆与注册
