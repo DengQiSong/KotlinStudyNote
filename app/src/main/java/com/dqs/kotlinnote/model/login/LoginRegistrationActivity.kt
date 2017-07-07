@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import com.dqs.kotlinnote.R
+import com.dqs.kotlinnote.presenter.IRegisterPresenter
 import java.util.*
 
 //登录注册流程
@@ -13,13 +14,13 @@ class LoginRegistrationActivity : AppCompatActivity() {
         var fragments: MutableMap<String, Fragment> = HashMap()
         var Fragment: FragmentManager? = null
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_registration)
         setDefaultFragment()
         cont.Fragment = supportFragmentManager
     }
-
 
 
     /**
@@ -65,6 +66,11 @@ class LoginRegistrationActivity : AppCompatActivity() {
                 transaction.hide(cont.fragments[name])
             }
             transaction.commit()
+        }
+
+        fun _on(ob: IRegisterPresenter) {
+            ob.loadAccount("123", "456")
+            ob.saveAccount("我", "你")
         }
     }
 }

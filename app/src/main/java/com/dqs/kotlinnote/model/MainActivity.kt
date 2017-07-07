@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val next = findViewById(R.id.Button02) as Button
         next.setOnClickListener {
             Toast.makeText(this, "测试", Toast.LENGTH_SHORT).show()
-            firstName.text = sum(4, 5)
+            firstName.text = sum(5, 5)
         }
 
         note.setOnClickListener {
@@ -45,7 +45,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sum(a: Int, b: Int): String {
-        return (a + b).toString()
+        val ar=if(a>b) (a - b) else (a + b)
+        return ar.toString()
     }
 
     /**getMethod：获取类中的public方法
